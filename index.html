@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Для Софии — с днём рождения</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#5a4148; --wine:#9c5264; --rose:#eaa0b4; --cream:#fff9f8; --paper:#fffdfc; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-width:320px; color:var(--ink); background:radial-gradient(circle at 80% 12%, #ffdce5 0, transparent 26%), linear-gradient(140deg,#fff9fa 0%,#f8e4e8 48%,#ffeef0 100%); font-family:Manrope,Arial,sans-serif; overflow-x:hidden; }
+    .hero { min-height:100svh; position:relative; padding:clamp(110px,14vh,150px) clamp(22px,6vw,94px) 54px; display:flex; flex-direction:column; justify-content:flex-start; overflow:hidden; isolation:isolate; }
+    .hero::before { content:""; position:absolute; inset:18px; z-index:-2; border:1px solid rgba(156,82,100,.2); border-radius:2px; }
+    .hero::after { display:none; }
+    .brand { position:absolute; top:25px; left:50%; transform:translateX(-50%); letter-spacing:.24em; font-size:10px; font-weight:600; color:#87646c; }
+    .eyebrow { margin:0 0 18px; text-transform:uppercase; color:#a86978; letter-spacing:.28em; font-size:10px; font-weight:600; }
+    h1 { margin:0; max-width:930px; font-family:"Cormorant Garamond",Georgia,serif; font-size:clamp(72px,12vw,176px); line-height:.73; letter-spacing:-.065em; font-weight:500; color:#60454c; }
+    h1 span { display:block; margin-left:clamp(18px,10vw,160px); font-style:italic; color:#b65d74; }
+    .hero-copy { width:min(540px,100%); margin:30px 0 0 clamp(4px,6vw,115px); font-size:clamp(17px,1.5vw,20px); line-height:1.55; color:#775a62; }
+    .scroll-note { position:absolute; bottom:35px; left:50%; transform:translateX(-50%); text-align:center; text-transform:uppercase; letter-spacing:.17em; font-size:9px; color:#a4717d; }
+    .scroll-note::after { content:"↓"; display:block; margin-top:8px; font-size:18px; animation:bob 2s ease-in-out infinite; }
+    .rose-sprig { position:absolute; right:2vw; bottom:4vh; width:min(27vw,355px); max-height:62vh; object-fit:contain; object-position:bottom; mix-blend-mode:multiply; opacity:.8; pointer-events:none; z-index:-1; filter:drop-shadow(0 15px 13px rgba(100,45,60,.12)); }
+    section { position:relative; }
+    .wishes { min-height:850px; padding:105px 24px 135px; text-align:center; overflow:hidden; background:linear-gradient(180deg,rgba(255,253,252,.65),#fce6eb 100%); }
+    .section-kicker { font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:#aa6a78; }
+    h2 { margin:10px 0 54px; font-family:"Cormorant Garamond",Georgia,serif; font-size:clamp(42px,5vw,68px); font-weight:500; line-height:.9; color:#65464e; }
+    .card-fan { width:min(940px,100%); margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; position:relative; z-index:1; }
+    .wish-card { position:relative; min-height:245px; padding:33px 25px 26px; border:0; border-radius:14px; color:#694a52; background:#ffffff; box-shadow:0 15px 30px rgba(126,66,82,.14),inset 0 0 0 1px rgba(184,103,124,.14); transition:transform .3s ease, box-shadow .3s ease; cursor:pointer; font-family:"Cormorant Garamond",Georgia,serif; font-size:23px; line-height:1.1; text-align:left; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .wish-card img { width:62%; height:auto; max-height:150px; object-fit:contain; filter:drop-shadow(0 10px 16px rgba(120,50,60,.25)); }
+    .wish-card::after { content:"Нажми, чтобы прочитать"; position:absolute; bottom:22px; left:25px; right:25px; font:500 8px Manrope,sans-serif; color:#b17a86; letter-spacing:.12em; text-transform:uppercase; text-align:center; }
+    .wish-card:hover, .wish-card:focus-visible { transform:translateY(-8px); box-shadow:0 24px 38px rgba(117,54,72,.24); outline:none; }
+    .roses { position:absolute; width:min(420px,48vw); left:-105px; bottom:-90px; opacity:.72; pointer-events:none; mix-blend-mode:multiply; }
+    .gift { padding:105px 24px 94px; min-height:850px; display:grid; place-items:center; background:#fff9f8; overflow:hidden; }
+    .gift-box { width:min(1090px,100%); display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:clamp(30px,8vw,130px); }
+    .gift-text { order:2; position:relative; z-index:1; }
+    .gift-text h2 { font-size:clamp(74px,9vw,126px); margin:0 0 12px; color:#b45a72; font-style:italic; }
+    .gift-text p { max-width:320px; margin:0 0 32px; font:500 14px/1.7 Manrope,sans-serif; color:#85626b; }
+    .photo-wrap { width:min(420px,86vw); aspect-ratio:3 / 4; justify-self:center; position:relative; transform:rotate(-3deg); }
+    .photo-wrap img { width:100%; height:100%; display:block; object-fit:contain; object-position:center top; filter:drop-shadow(13px 18px 20px rgba(125,67,82,.15)); }
+    .celebrate-area { display:inline-flex; position:relative; flex-direction:column; align-items:center; margin:20px 0 0 34px; }
+    .button-hint { margin-bottom:9px; color:#b66279; font:italic 24px "Cormorant Garamond",Georgia,serif; text-align:center; }
+    .button-hint::after { content:"↓"; display:block; font-size:26px; margin-top:2px; animation:pointDown 1.15s ease-in-out infinite; }
+    .celebrate { position:relative; border:1px solid rgba(151,66,88,.38); padding:18px 27px; border-radius:100px; background:#9f5368; color:white; cursor:pointer; box-shadow:0 8px 18px rgba(159,83,104,.22); transition:transform .25s,background .25s; text-transform:uppercase; letter-spacing:.15em; font:600 10px Manrope,sans-serif; animation:button-glow 1.05s ease-in-out infinite; }
+    .celebrate:hover { transform:translateY(-3px); background:#874257; } .celebrate:active { transform:translateY(1px) scale(.98); }
+    .footer { margin-top:70px; position:absolute; bottom:29px; font-size:9px; letter-spacing:.22em; text-transform:uppercase; color:#a57983; }
+    #celebration { position:fixed; inset:0; pointer-events:none; z-index:100; overflow:hidden; }
+    .heart { position:absolute; animation:rise 2.8s ease-out forwards; filter:drop-shadow(0 3px 2px rgba(128,42,68,.14)); }
+    .spark { position:absolute; width:8px; height:8px; border-radius:50%; animation:burst 1.5s cubic-bezier(.1,.7,.2,1) forwards; }
+    @keyframes bob { 50% { transform:translateY(6px); } } @keyframes button-glow { 50% { transform:scale(1.055); background:#bd6b80; box-shadow:0 10px 27px rgba(181,82,110,.48); } } @keyframes point { 50% { transform:translate(7px,8px) rotate(-12deg); } } @keyframes pointDown { 50% { transform:translateY(7px); } } @keyframes rise { 0% { transform:translate(-50%,0) scale(.5) rotate(0); opacity:0; } 14% { opacity:1; } 100% { transform:translate(calc(-50% + var(--drift)), -115vh) scale(1.45) rotate(24deg); opacity:0; } } @keyframes burst { to { transform:translate(var(--tx),var(--ty)) scale(.2); opacity:0; } }
+    .wish-modal { position:fixed; inset:0; z-index:200; display:grid; place-items:center; padding:22px; background:rgba(86,47,59,.56); opacity:0; visibility:hidden; transition:opacity .28s ease,visibility .28s ease; }
+    .wish-modal.open { opacity:1; visibility:visible; }
+    .modal-close { position:absolute; top:23px; right:24px; z-index:2; border:0; background:transparent; color:#fff; cursor:pointer; font:400 42px/1 "Cormorant Garamond",serif; }
+    .modal-card { width:min(620px,100%); min-height:min(680px,82vh); position:relative; }
+    .modal-face { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:clamp(38px,8vw,85px); border-radius:8px; box-shadow:0 30px 70px rgba(53,23,33,.35); }
+    .modal-front { background:linear-gradient(135deg,#fffdfd,#ffe4ea); color:#694a52; text-align:center; font:500 clamp(34px,5vw,58px)/1.03 "Cormorant Garamond",Georgia,serif; }
+    @media (max-width:760px) { .hero { min-height:680px; padding-top:112px; } .hero-copy { margin:25px 0 0; max-width:350px; font-size:17px; } .rose-sprig { width:58vw; right:-8vw; bottom:2vh; opacity:.55; } .wishes { padding:74px 18px 92px; min-height:auto; } .card-fan { grid-template-columns:repeat(2,1fr); gap:12px; } .wish-card { min-height:215px; padding:25px 18px; font-size:21px; } .gift { min-height:800px; padding-top:75px; } .gift-box { grid-template-columns:1fr; gap:50px; text-align:center; } .gift-text { order:1; } .gift-text p { margin-left:auto; margin-right:auto; } .photo-wrap { order:2; } .roses { width:390px; left:-155px; } }
+    @media (max-width:420px) { .hero { min-height:665px; padding:104px 21px 38px; } h1 { font-size:78px; } h1 span { margin-left:20px; } .brand { top:24px; } .eyebrow { font-size:9px; } .hero-copy { font-size:17px; } .wishes { padding:65px 14px 82px; } .card-fan { grid-template-columns:1fr; gap:13px; } .wish-card { min-height:175px; padding:24px 22px; font-size:23px; } .gift { min-height:765px; padding:62px 20px 85px; } .gift-box { gap:34px; } .gift-text h2 { font-size:74px; } .photo-wrap { width:285px; } .celebrate-area { margin-left:15px; } .modal-card { min-height:70vh; } .modal-front { font-size:42px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="brand">SOFIA'S DAY</div>
+      <p class="eyebrow">только для тебя</p>
+      <h1>Дорогая,<span>София</span></h1>
+      <p class="hero-copy">Поздравляю тебя с днём рождения.<br>В этот прекрасный день хочу пожелать тебе несколько тёплых слов.</p>
+      <img class="rose-sprig" src="assets/rose_sprig.webp" alt="Нежные розы" />
+      <div class="scroll-note">листани ниже</div>
+    </section>
+    <section class="wishes" aria-labelledby="wishes-title">
+      <div class="section-kicker">искренние пожелания</div>
+      <h2 id="wishes-title">Для твоего счастья</h2>
+      <div class="card-fan" id="card-fan"></div>
+      <img class="roses" src="assets/roses_deco.webp" alt="" loading="lazy" decoding="async" />
+    </section>
+    <section class="gift">
+      <div class="gift-box">
+        <div class="photo-wrap"><img src="assets/sofia_photo.webp" alt="Букет для Софии" loading="lazy" decoding="async" /></div>
+        <div class="gift-text">
+          <h2>Это тебе</h2>
+          <p>Пусть этот день будет наполнен цветами, улыбками и самыми добрыми моментами.</p>
+          <div class="celebrate-area">
+            <span class="button-hint">нажми сюда</span>
+            <button class="celebrate" type="button">С днём рождения ♡</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer">с наилучшими пожеланиями, Галюсик</div>
+    </section>
+  </main>
+  <div class="wish-modal" id="wish-modal" aria-hidden="true">
+    <button class="modal-close" type="button" aria-label="Закрыть">×</button>
+    <div class="modal-card" id="modal-card">
+      <div class="modal-face modal-front" id="modal-text"></div>
+    </div>
+  </div>
+  <div id="celebration" aria-hidden="true"></div>
+  <script>
+    // ---------------- ПОЖЕЛАНИЯ + РИСОВАННЫЕ ЦВЕТЫ НА ЛИЦЕВОЙ СТОРОНЕ КАРТОЧЕК ----------------
+    const wishesData = [
+      { text: 'Пусть счастье будет не редким гостем, а привычным состоянием.', img: 'assets/hydrangea.webp' },
+      { text: 'Пусть рядом всегда будет любовь — тёплая, настоящая, взаимная.', img: 'assets/sweetpea.webp' },
+      { text: 'Пусть любые сложности становятся просто очередным шагом, с которым ты справишься.', img: 'assets/lisianthus.webp' },
+      { text: 'Ты уже большая молодец — просто помни об этом чаще.', img: 'assets/gladiolus.webp' },
+      { text: 'У тебя обязательно всё получится — во всём, за что ты берёшься.', img: 'assets/tulip.webp' },
+      { text: 'Главное — научиться доводить дела до конца.', img: 'assets/cosmos.webp' }
+    ];
+
+    const cardFan = document.getElementById('card-fan');
+    wishesData.forEach((w, i) => {
+      const btn = document.createElement('button');
+      btn.className = `wish-card card-${i + 1}`;
+      btn.type = 'button';
+      btn.dataset.wish = w.text;
+      btn.innerHTML = `<img src="${w.img}" alt="цветок" loading="lazy" decoding="async" />`;
+      cardFan.appendChild(btn);
+    });
+
+    // ---------------- МОДАЛКА С ПОЖЕЛАНИЕМ ----------------
+    const modal = document.getElementById('wish-modal');
+    const modalText = document.getElementById('modal-text');
+    const closeModal = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); };
+    document.querySelectorAll('.wish-card').forEach(card => card.addEventListener('click', () => {
+      modalText.textContent = card.dataset.wish;
+      modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+    }));
+    document.querySelector('.modal-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+    const stage = document.getElementById('celebration');
+    document.querySelector('.celebrate').addEventListener('click', () => {
+      stage.replaceChildren();
+      const colors = ['#ee7e9d','#ffb2c5','#a94f6b','#ffd46a','#ffffff'];
+      for (let i = 0; i < 36; i++) {
+        const heart = document.createElement('span'); heart.className = 'heart'; heart.textContent = Math.random() > .25 ? '♥' : '♡';
+        heart.style.left = `${8 + Math.random() * 84}%`; heart.style.bottom = `${-4 + Math.random() * 16}%`;
+        heart.style.fontSize = `${16 + Math.random() * 28}px`; heart.style.color = colors[i % colors.length]; heart.style.setProperty('--drift', `${-110 + Math.random() * 220}px`); stage.append(heart);
+      }
+      [[50,52],[23,38],[78,32]].forEach(([x,y]) => { for(let i=0;i<38;i++) { const spark=document.createElement('i'); const a=Math.random()*Math.PI*2, d=55+Math.random()*145; spark.className='spark'; spark.style.left=x+'%'; spark.style.top=y+'%'; spark.style.background=colors[i%colors.length]; spark.style.setProperty('--tx', Math.cos(a)*d+'px'); spark.style.setProperty('--ty', Math.sin(a)*d+'px'); stage.append(spark); }});
+      setTimeout(() => stage.replaceChildren(), 3100);
+    });
+  </script>
+</body>
+</html>
