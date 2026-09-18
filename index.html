@@ -27,10 +27,10 @@
     .wishes { min-height:850px; padding:105px 24px 135px; text-align:center; overflow:hidden; background:linear-gradient(180deg,rgba(255,253,252,.65),#fce6eb 100%); }
     .section-kicker { font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:#aa6a78; }
     h2 { margin:10px 0 54px; font-family:"Cormorant Garamond",Georgia,serif; font-size:clamp(42px,5vw,68px); font-weight:500; line-height:.9; color:#65464e; }
-    .card-fan { width:min(940px,100%); margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; position:relative; z-index:1; }
-    .wish-card { position:relative; min-height:245px; padding:33px 25px 26px; border:0; border-radius:14px; color:#694a52; background:#ffffff; box-shadow:0 15px 30px rgba(126,66,82,.14),inset 0 0 0 1px rgba(184,103,124,.14); transition:transform .3s ease, box-shadow .3s ease; cursor:pointer; font-family:"Cormorant Garamond",Georgia,serif; font-size:23px; line-height:1.1; text-align:left; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-    .wish-card img { width:62%; height:auto; max-height:150px; object-fit:contain; filter:drop-shadow(0 10px 16px rgba(120,50,60,.25)); }
-    .wish-card::after { content:"Нажми, чтобы прочитать"; position:absolute; bottom:22px; left:25px; right:25px; font:500 8px Manrope,sans-serif; color:#b17a86; letter-spacing:.12em; text-transform:uppercase; text-align:center; }
+    .card-fan { width:min(940px,100%); margin:0 auto; display:grid; grid-template-columns:repeat(2,1fr); gap:18px; position:relative; z-index:1; }
+    .wish-card { position:relative; min-height:245px; padding:33px 25px 26px; border:0; border-radius:14px; color:#694a52; background:#ffffff; box-shadow:0 15px 30px rgba(126,66,82,.14),inset 0 0 0 1px rgba(184,103,124,.14); transition:transform .3s ease, box-shadow .3s ease; cursor:pointer; font-family:"Cormorant Garamond",Georgia,serif; font-size:23px; line-height:1.1; text-align:left; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:10px; overflow:hidden; }
+    .wish-card img { width:62%; max-height:150px; flex:1 1 auto; min-height:0; object-fit:contain; filter:drop-shadow(0 10px 16px rgba(120,50,60,.25)); }
+    .wish-card::after { content:"Нажми, чтобы прочитать"; position:static; margin-top:auto; font:500 8px Manrope,sans-serif; color:#b17a86; letter-spacing:.12em; text-transform:uppercase; text-align:center; }
     .wish-card:hover, .wish-card:focus-visible { transform:translateY(-8px); box-shadow:0 24px 38px rgba(117,54,72,.24); outline:none; }
     .roses { position:absolute; width:min(420px,48vw); left:-105px; bottom:-90px; opacity:.72; pointer-events:none; mix-blend-mode:multiply; }
     .gift { padding:105px 24px 94px; min-height:850px; display:grid; place-items:center; background:#fff9f8; overflow:hidden; }
@@ -41,8 +41,8 @@
     .photo-wrap { width:min(420px,86vw); aspect-ratio:3 / 4; justify-self:center; position:relative; transform:rotate(-3deg); }
     .photo-wrap img { width:100%; height:100%; display:block; object-fit:contain; object-position:center top; filter:drop-shadow(13px 18px 20px rgba(125,67,82,.15)); }
     .celebrate-area { display:inline-flex; position:relative; flex-direction:column; align-items:center; margin:20px 0 0 34px; }
-    .button-hint { margin-bottom:9px; color:#b66279; font:italic 24px "Cormorant Garamond",Georgia,serif; text-align:center; }
-    .button-hint::after { content:"↓"; display:block; font-size:26px; margin-top:2px; animation:pointDown 1.15s ease-in-out infinite; }
+    
+    
     .celebrate { position:relative; border:1px solid rgba(151,66,88,.38); padding:18px 27px; border-radius:100px; background:#9f5368; color:white; cursor:pointer; box-shadow:0 8px 18px rgba(159,83,104,.22); transition:transform .25s,background .25s; text-transform:uppercase; letter-spacing:.15em; font:600 10px Manrope,sans-serif; animation:button-glow 1.05s ease-in-out infinite; }
     .celebrate:hover { transform:translateY(-3px); background:#874257; } .celebrate:active { transform:translateY(1px) scale(.98); }
     .footer { margin-top:70px; position:absolute; bottom:29px; font-size:9px; letter-spacing:.22em; text-transform:uppercase; color:#a57983; }
@@ -57,7 +57,7 @@
     .modal-face { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:clamp(38px,8vw,85px); border-radius:8px; box-shadow:0 30px 70px rgba(53,23,33,.35); }
     .modal-front { background:linear-gradient(135deg,#fffdfd,#ffe4ea); color:#694a52; text-align:center; font:500 clamp(34px,5vw,58px)/1.03 "Cormorant Garamond",Georgia,serif; }
     @media (max-width:760px) { .hero { min-height:680px; padding-top:112px; } .hero-copy { margin:25px 0 0; max-width:350px; font-size:17px; } .rose-sprig { width:58vw; right:-8vw; bottom:2vh; opacity:.55; } .wishes { padding:74px 18px 92px; min-height:auto; } .card-fan { grid-template-columns:repeat(2,1fr); gap:12px; } .wish-card { min-height:215px; padding:25px 18px; font-size:21px; } .gift { min-height:800px; padding-top:75px; } .gift-box { grid-template-columns:1fr; gap:50px; text-align:center; } .gift-text { order:1; } .gift-text p { margin-left:auto; margin-right:auto; } .photo-wrap { order:2; } .roses { width:390px; left:-155px; } }
-    @media (max-width:420px) { .hero { min-height:665px; padding:104px 21px 38px; } h1 { font-size:78px; } h1 span { margin-left:20px; } .brand { top:24px; } .eyebrow { font-size:9px; } .hero-copy { font-size:17px; } .wishes { padding:65px 14px 82px; } .card-fan { grid-template-columns:1fr; gap:13px; } .wish-card { min-height:175px; padding:24px 22px; font-size:23px; } .gift { min-height:765px; padding:62px 20px 85px; } .gift-box { gap:34px; } .gift-text h2 { font-size:74px; } .photo-wrap { width:285px; } .celebrate-area { margin-left:15px; } .modal-card { min-height:70vh; } .modal-front { font-size:42px; } }
+    @media (max-width:420px) { .hero { min-height:665px; padding:104px 21px 38px; } h1 { font-size:78px; } h1 span { margin-left:20px; } .brand { top:24px; } .eyebrow { font-size:9px; } .hero-copy { font-size:17px; } .wishes { padding:65px 14px 82px; } .card-fan { grid-template-columns:repeat(2,1fr); gap:10px; } .wish-card { min-height:175px; padding:24px 22px; font-size:23px; } .gift { min-height:765px; padding:62px 20px 85px; } .gift-box { gap:34px; } .gift-text h2 { font-size:74px; } .photo-wrap { width:285px; } .celebrate-area { margin-left:15px; } .modal-card { min-height:70vh; } .modal-front { font-size:42px; } }
   </style>
 </head>
 <body>
@@ -83,7 +83,7 @@
           <h2>Это тебе</h2>
           <p>Пусть этот день будет наполнен цветами, улыбками и самыми добрыми моментами.</p>
           <div class="celebrate-area">
-            <span class="button-hint">нажми сюда</span>
+            
             <button class="celebrate" type="button">С днём рождения ♡</button>
           </div>
         </div>
